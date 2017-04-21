@@ -14,7 +14,8 @@ try:
         count += 1
         pyautogui.click()
         time.sleep(.001)
-        if count % 50 == 0:
+        if count % 50 == 0 and percentage <= 90:
+            print("\n" * 100)
             progress_bar += '#'
             end = end[1:]
             percentage = (count / 100) * 20
@@ -23,8 +24,8 @@ try:
             print("10 second pause")
             answer = input('Continue Y/N? ')
             if answer == "N":
-                print("Starting in 10 seconds")
                 break
+            print("Starting in 10 seconds")
             time.sleep(10)
             count = 0
             print("Starting")
